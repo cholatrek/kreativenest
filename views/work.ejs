@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="discrption" content="parallax one page" />
+    <meta name="keyword"
+        content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple" />
+
+    <!--  Title -->
+    <title>Droow - Creative Showcase Portfolio Template</title>
+
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700&display=swap" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+
+    <!-- custom styles (optional) -->
+    <link href="assets/css/plugins.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body class="v-light hamburger-menu dsn-effect-scroll dsn-ajax" data-dsn-mousemove="true">
+    <div data-dsn-temp="light"></div>
+
+    <%- include('./partials/navbar') %>
+    <main class="main-root">
+        <div id="dsn-scrollbar">
+            <header>
+                <div class="container header-hero">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="contenet-hero">
+                                <h5>Our WOrk</h5>
+                                <h1>portfolio</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="wrapper">
+                <div class="root-work">
+                    <div class="container">
+                        <div class="box-title" data-dsn-title="cover">
+                            <h2 class="title-cover" data-dsn-grid="move-section" data-dsn-move="-70">Projets</h2>
+                        </div>
+
+                        <!-- <div class="filterings">
+                            <div class="filtering-wrap">
+                                <div class="filtering">
+                                    <div class="selector"></div>
+                                    <button type="button" data-filter="*" class="active">
+                                        All
+                                    </button>
+                                    <button type="button" data-filter=".brand">Brand</button>
+                                    <button type="button" data-filter=".photography">Photography</button>
+                                    <button type="button" data-filter=".architecture">Architecture</button>
+                                    <button type="button" data-filter=".video">video</button>
+
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="projects-list gallery">
+                           <% for(var i= 0; i < portfolio.length; i++){ %>
+                                <div class="item brand">
+                                    <a href="/portfolio/<%= portfolio[i]._id %>" class="effect-ajax" data-dsn-ajax="work"
+                                        data-dsn-grid="move-up">
+                                        <img class="has-top-bottom" src="<%= portfolio[i].portfolioImage.slice(8) %>" alt="" />
+                                        <div class="item-border"></div>
+                                        <div class="item-info">
+                                            <!-- <h5 class="cat">Brand</h5> -->
+                                            <h5 style="color:white"><%= portfolio[i].title %></h5>
+                                            <span><span>Veiw Project</span></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            <% } %>
+                           
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <section class="contact-up section-margin section-padding">
+                    <div class="container">
+                        <div class="c-wapp">
+                            <a href="contact.html" class="effect-ajax">
+                                <span class="hiring">
+                                    We are hiring
+                                </span>
+                                <span class="career">
+                                    Dare and contact us immediately!
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </section> -->
+
+            </div>
+            <footer>
+                <div class="info">
+                    <div class="contact-footer">
+                        <a href="tel:010" class="phone image-zoom" data-dsn="parallax">+2348147433290</a>
+                        <a href="info@kreativenest.com" class="email image-zoom" data-dsn="parallax">info@kreativenest.com</a>
+                    </div>
+                    <div class="copyright-social">
+                        <p>© 2019 kreativeNest</p>
+                        <ul>
+                            <li class="image-zoom" data-dsn="parallax"><a href="http://www.instagram.com/kreativenest_official" target="_blank">Instagram</a>
+                            </li>
+                            <li class="image-zoom" data-dsn="parallax"><a href="https://web.facebook.com/kreativenest_official-113150937526710" target="_blank">Facebook</a></li>
+                            <li class="image-zoom" data-dsn="parallax"><a href="http://www.twitter.com/kreative_nest" target="_blank">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Wait Loader -->
+    <div class="wait-loader">
+        <div class="loader-inner">
+            <div class="loader-circle">
+                <div class="loader-layer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- // Wait Loader -->
+
+
+    <!-- cursor -->
+    <div class="cursor">
+
+        <div class="cursor-helper cursor-view">
+            <span>VIEW</span>
+        </div>
+
+        <div class="cursor-helper cursor-close">
+            <span>Close</span>
+        </div>
+
+        <div class="cursor-helper cursor-link"></div>
+    </div>
+    <!-- End cursor -->
+
+    <!-- Optional JavaScript -->
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/dsn-grid.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

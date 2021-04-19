@@ -1,0 +1,207 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+  <link href="/assets/css/style2.css" rel="stylesheet" type="text/css" >
+     
+    </head>
+    <body>
+
+      <!-- addition  of navbar -->
+        <%- include('./partials/navbar') %>
+      <!-- End of navbar -->
+      <!-- begin side bar  -->
+      <br><br>
+        <div class="section">
+            <div class="row">
+                <div class="col-sm-2"  >
+                
+                   <%- include('./partials/sidebar') %>
+                
+            </div>
+                <div class="col-sm-10"  >
+                    <div class="content">
+                        <div class="container"><br><br>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <h3> Your Portfoio</h3>
+                            </div>
+
+                            <div class="col-sm-6">
+                              <div class="float-right">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" >Upload a Portfolio Page</button>
+                             
+                                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Portfolio Page Update</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form action="/admin/portfolio" method="post" required enctype="multipart/form-data" >
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail1">Title</label>
+                                            <input type="text" class="form-control" name="title" required  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the title">
+                                           
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputPassword1">event Details</label>
+                                            <input type="text" name="eventDetails"  class="form-control" required id="exampleInputPassword1" placeholder="event Details">
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label for="exampleInputPassword1">instagram Link</label>
+                                            <input type="text" name="instagramLink"  class="form-control" required id="exampleInputPassword1" placeholder="instagramLink">
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label for="exampleInputPassword1">Youtube Link</label>
+                                            <input type="text" name="youtubeLink"  class="form-control" required id="exampleInputPassword1" placeholder="Youtube link">
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label for="exampleInputPassword1">Date Posted </label>
+                                            <input type="date" name="datePosted"  class="form-control" required id="exampleInputPassword1" >
+                                          </div>
+
+                                        
+                                          <div class="form-group">
+                                            <label for="exampleFormControlFile1">Upload Image (1800 X 1700)</label>
+                                            <input type="file" class="form-control-file" name="portfolioImage" required id="exampleFormControlFile1">
+                                          </div>
+                                         
+                                          <button type="submit" class="btn btn-primary float-right">Submit</button>
+                                        </form>
+                                      </div>
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                             
+                              </div>
+                            </div>                     
+                          </div>
+                          <div class="line">
+                                
+                          </div>
+                          
+                          <div class="hide"></div>
+                          <div class="row" >
+
+                            <% for(var i = 0; i< portfolio.length; i++){ %>
+                              <div class="col-sm-3">
+                                <div class="shadow p-3 bg-white rounded">
+                                  <div class="card" >
+                                    <img src="<%= portfolio[i].portfolioImage.slice(8) %>" class="card-img-top" alt="...">
+                                    <div class="card-body" style="margin-left:-10px;margin-top:-10px;">
+                                      <p class="align-left" style="font-weight:600;font-size: 13px;"><%= portfolio[i].title %> </p>
+                                      <button class="float-left btn btn-success " data-toggle="modal" data-target="#exampleModalLonger<%= portfolio[i]._id %>" style="font-size:12px;" >Edit Post</button>
+                                      <button class="float-right btn btn-danger "  data-toggle="modal" data-target="#popup<%= i + portfolio.length %>" style="font-size:12px;" >Delete Post</button>
+                                    </div>
+                                  </div>
+                                </div><br>
+                              </div>
+
+                              <div class="modal fade" id="exampleModalLonger<%= portfolio[i]._id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLongTitle">Portfolio Page Update</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form action="/admin/portfolio/<%= portfolio[i]._id %>" method="post" required  >
+                                        <div class="form-group">
+                                          <label for="exampleInputEmail1">Title</label>
+                                          <input type="text" class="form-control" name="title" required value="<%= portfolio[i].title %> "  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the title">
+                                         
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="exampleInputPassword1">event Details</label>
+                                          <input type="text" name="eventDetails"  class="form-control" value="<%= portfolio[i].eventDetails %>"  required id="exampleInputPassword1" placeholder="event Details">
+                                        </div>
+
+                                        
+                                        <div class="form-group">
+                                          <label for="exampleInputPassword1">instagram Link</label>
+                                          <input type="text" name="instagramLink"  class="form-control" value="<%= portfolio[i].instagramLink %>" required id="exampleInputPassword1" placeholder="instagramLink">
+                                        </div>
+
+                                        <div class="form-group">
+                                          <label for="exampleInputPassword1">Youtube Link</label>
+                                          <input type="text" name="youtubeLink"  class="form-control" value="<%= portfolio[i].youtubeLink %> " required id="exampleInputPassword1" placeholder="Youtube link">
+                                        </div>
+
+                                        <div class="form-group">
+                                          <label for="exampleInputPassword1">Date Posted </label>
+                                          <input type="date" name="datePosted" value="<%= portfolio[i].datePosted %>"  class="form-control" required id="exampleInputPassword1" >
+                                        </div>
+
+
+                                       
+                                       
+                                        <button type="submit" class="btn btn-primary float-right">Submit</button>
+                                      </form>
+                                    </div>
+                                   
+                                  </div>
+                                </div>
+                              </div>
+
+
+                                             
+                        <div class="modal fade" id="popup<%= i+ portfolio.length  %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitles" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content" style="padding:5%">
+                              <h4 style="font-weight:bold; text-align:center">Do you want to Delete this post ?</h4><br>
+                             <center> 
+                                  <form action="/admin/portfolioDelete/<%= portfolio[i].id %>" method="post">
+                                        <input type="hidden">
+                                        <button class="btn btn-danger"  style="padding:10px 30px;" type="submit">Yes</button>  
+                                  </form>
+                            </center>
+                            </div>
+                          </div>
+                        </div>
+
+                        
+                            <% } %>
+                            
+                           
+                    
+
+
+                           
+
+                           
+                           
+
+
+                            
+                           
+                         
+                            
+                            
+                          </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+      <!-- end of sidebar -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

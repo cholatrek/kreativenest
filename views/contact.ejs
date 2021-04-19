@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="discrption" content="parallax one page" />
+  <meta name="keyword"
+    content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple" />
+
+  <!--  Title -->
+  <title>Droow - Creative Showcase Portfolio Template</title>
+
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&display=swap" rel="stylesheet">
+
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+
+  <!-- custom styles (optional) -->
+  <link href="assets/css/plugins.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body class="v-light hamburger-menu dsn-effect-scroll dsn-ajax" data-dsn-mousemove="true">
+  <div data-dsn-temp="light"></div>
+
+
+  <%- include('./partials/navbar') %>
+  
+  <main class="main-root">
+    <div id="dsn-scrollbar">
+      <header>
+        <div class="container header-hero">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="contenet-hero">
+                <h5>Let's Tock</h5>
+                <h1>Contact</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="wrapper">
+        <div class="root-contact">
+          <div class="container-fluid ">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.9515565719216!2d3.3939662147707526!3d6.527802895278353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzEnNDAuMSJOIDPCsDIzJzQ2LjIiRQ!5e0!3m2!1sen!2sng!4v1618784193058!5m2!1sen!2sng" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <div class="container section-margin">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="box-info-contact">
+                  <h3>Start a new project?</h3>
+                  <h5>Visit our studio at</h5>
+                  <p>You can contact us for any of our services, we have our communication portal open from <br> 8am -10pm</p>
+
+                  <ul>
+                    <li>
+                      <span>Phone</span>
+                      <a href="tel:+2348147433290">+2348147433290</a>
+                    </li>
+                    <li>
+                      <span>Email</span>
+                      <a href="mailto:info@kreativenest.com">info@kreativenest.com</a>
+                    </li>
+                    <li>
+                      <span>Address</span>
+                      <a href="#">Delia suites, Oremeji street off Ilaje Road, Bariga</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-box">
+                
+                  <% if(success.length > 0){ %>
+                   <h3> <%= success %></h3>
+                  <% }else{ %>
+                    <h3>Write A Comment</h3>
+                  <% } %>
+                  <form   class="form" method="post" action="/contact" data-toggle="validator">
+                    <div class="messages"></div>
+                    <div class="input__wrap controls">
+                      <div class="form-group">
+
+                        <div class="entry">
+                          <label>What's your name?</label>
+                          <input id="form_name" type="text" name="name" placeholder="Type your name" required="required"
+                            data-error="name is required.">
+                        </div>
+                        <div class="help-block with-errors"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="entry">
+                          <label>What's your email address?</label>
+                          <input id="form_email" type="email" name="email" placeholder="Type your Email Address"
+                            required="required" data-error="Valid email is required.">
+                        </div>
+                        <div class="help-block with-errors"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="entry">
+                          <label>What's up?</label>
+                          <textarea id="form_message" class="form-control" name="message"
+                            placeholder="Tell us about you and the world" required="required"
+                            data-error="Please,leave us a message."></textarea>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                      </div>
+
+                      <div class="image-zoom" data-dsn="parallax">
+                        <button type="submit">Send Message</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="contact-up section-margin section-padding">
+          <div class="container">
+            <div class="c-wapp">
+              <a href="/ourwork" class="effect-ajax">
+                <span class="hiring">
+                  portfolio
+                </span>
+                <span class="career">
+                  See Our Works
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <footer>
+          <div class="info">
+              <div class="contact-footer">
+                  <a href="tel:010" class="phone image-zoom" data-dsn="parallax">+2348147433290</a>
+                  <a href="info@kreativenest.com" class="email image-zoom" data-dsn="parallax">info@kreativenest.com</a>
+              </div>
+              <div class="copyright-social">
+                  <p>© 2019 kreativeNest</p>
+                  <ul>
+                      <li class="image-zoom" data-dsn="parallax"><a href="http://www.instagram.com/kreativenest_official" target="_blank">Instagram</a>
+                      </li>
+                      <li class="image-zoom" data-dsn="parallax"><a href="https://web.facebook.com/kreativenest_official-113150937526710" target="_blank">Facebook</a></li>
+                      <li class="image-zoom" data-dsn="parallax"><a href="http://www.twitter.com/kreative_nest" target="_blank">Twitter</a></li>
+                  </ul>
+              </div>
+          </div>
+      </footer>
+      </div>
+    </div>
+  </main>
+
+  <!-- Wait Loader -->
+  <div class="wait-loader">
+    <div class="loader-inner">
+      <div class="loader-circle">
+        <div class="loader-layer"></div>
+      </div>
+    </div>
+  </div>
+  <!-- // Wait Loader -->
+
+
+  <!-- cursor -->
+  <div class="cursor">
+
+    <div class="cursor-helper cursor-view">
+      <span>VIEW</span>
+    </div>
+
+    <div class="cursor-helper cursor-close">
+      <span>Close</span>
+    </div>
+
+    <div class="cursor-helper cursor-link"></div>
+  </div>
+  <!-- End cursor -->
+
+  <!-- Optional JavaScript -->
+  <script src="assets/js/jquery-3.1.1.min.js"></script>
+  <script src="assets/js/plugins.js"></script>
+  <script src="assets/js/dsn-grid.js"></script>
+
+  <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>

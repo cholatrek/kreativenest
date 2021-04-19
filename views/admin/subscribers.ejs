@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+  <link href="/assets/css/style2.css" rel="stylesheet" type="text/css" >
+     
+    </head>
+    <body>
+
+      <!-- addition  of navbar -->
+        <%- include('./partials/navbar') %>
+      <!-- End of navbar -->
+      <!-- begin side bar  -->
+      <br><br>
+        <div class="section">
+            <div class="row">
+                <div class="col-sm-2"  >
+                
+                   <%- include('./partials/sidebar') %>
+                
+            </div>
+                <div class="col-sm-10"  >
+                    <div class="content">
+                        <div class="container"><br><br>
+                            <h3>List of subscribers</h3>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+      <!-- end of sidebar -->
+    </body>
+</html>
